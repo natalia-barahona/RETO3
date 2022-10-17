@@ -28,4 +28,14 @@ public class CategoryController {
     public Optional<Category> getCategory(@PathVariable("id") int id) {
         return categoryService.getCategory(id);
     }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+     public void update(@RequestBody Category category) {
+        categoryService.update(category);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean deleteCategory(@PathVariable("id") int id) {
+        return categoryService.delete(id);
+    }
 }

@@ -29,4 +29,14 @@ public class MessagesController {
     public Optional<Messages> getMessage(@PathVariable("id") int id){
         return messagesService.getMessage(id);
     }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+     public void update(@RequestBody Messages messages) {
+        messagesService.update(messages);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean deleteCategory(@PathVariable("id") int id) {
+        return messagesService.delete(id);
+    }
 }

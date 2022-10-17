@@ -29,4 +29,14 @@ public class ScoreController {
     public Optional<Score> getScore(@PathVariable("id") int id){
         return scoreService.getScore(id);
     }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+     public void update(@RequestBody Score score) {
+        scoreService.update(score);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean deleteCategory(@PathVariable("id") int id) {
+        return scoreService.delete(id);
+    }
 }

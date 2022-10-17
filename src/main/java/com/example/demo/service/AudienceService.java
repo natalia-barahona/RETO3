@@ -47,6 +47,9 @@ public class AudienceService {
                 if (audience.getDescription() != null) {
                     opt1.get().setDescription(audience.getDescription());
                 }
+                if (audience.getCategory()!=null){
+                    opt1.get().setCategory(audience.getCategory());
+                }
                 audienceRepository.save(opt1.get());
                 return opt1.get();
                 }else {
